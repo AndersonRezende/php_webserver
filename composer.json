@@ -1,0 +1,21 @@
+{
+    "name": "anderson/php_webserver",
+    "description": "Just a simple php webserver for learning purposes",
+    "type": "project",
+    "license": "APACHE2",
+    "autoload": {
+        "psr-4": {
+            "Anderson\\PhpWebserver\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anderson Rezende",
+            "email": "andersonrezende17@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+      "ext-sockets": "*"
+    }
+}

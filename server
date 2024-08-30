@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+use Anderson\PhpWebserver\Request;
+use Anderson\PhpWebserver\Response;
+use Anderson\PhpWebserver\Server;
+
+array_shift($argv);
+if (empty($argv)) {
+    $port = 80;
+} else {
+    $port = array_shift($argv);
+}
+
+require __DIR__ . '/vendor/autoload.php';
+
+echo "Porta: $port";
+try {
+    $server = new Server('127.0.0.1', (int) $port);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+$server->listen(
+        function(Request $request) {
+            return new Response('Hello World!');
+        }
+);
